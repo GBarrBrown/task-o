@@ -6,7 +6,8 @@ module.exports = {
     getAllTasks,
     getAllUsers,
     getTask,
-    getUser
+    getUser,
+    getCollabs
 }
 
 
@@ -20,9 +21,14 @@ function getAllTasks(UID, db = connection){
 function getTask(taskID, db = connection){
     return db('tasks')
         .select()
-        // .join('task_user', 'tasks.id', 'task_user.task_id')
-        // .join('users', 'users.id', "task_user.user_id")
         .where('tasks.id', taskID)
+}
+
+function getCollabs(taskID, db = connection){
+    return db('task_user')
+        .select('users.id', 'users.name', 'users.email')
+        .join('users', 'users.id', 'task_user.user_id')
+        .where('task_user.task_id', taskID)
 }
 
 function getAllUsers(db = connection){
@@ -34,3 +40,10 @@ function getUser(login, db = connection){
         .select()
         .where('email', login)
 }
+
+// getTask(res.body.task).then((task) => {
+//     getCollabs(res.body.task).then((collabs) => {
+//         task[0].collaborators = collabs
+//         //render here
+//     })
+// })
