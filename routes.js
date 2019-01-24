@@ -44,6 +44,8 @@ router.get('/:id/task/:task', (req,res) => {
     })
 })
 
+router.get('/:id/add', (req, res) => {
 
+})
 
 module.exports = router
