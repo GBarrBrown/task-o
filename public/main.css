@@ -16,31 +16,31 @@ body {
     clear: both;
 }
 
-.task-title {
+.tasks-title {
     font-size: 125%;
 
 }
 
-.task-date {
+.tasks-date {
     color: grey;
     text-align: right;
 }
 
-.task-container {
+.tasks-container {
     margin: 3px;
     /* background-color: rgb(240, 240, 240) */
     background-color: rgb(255, 250, 250);
     border-radius: 5px;
 }
 
-.task-summary {
+.tasks-summary {
     margin: 5px;
 }
 
-.task-link{
+.tasks-link{
     text-decoration: none;
 }
 
-.task-link:hover .task-title, .task-link:visited {
+.tasks-link:hover .tasks-title, .tasks-link:visited {
     color: black;
 }
