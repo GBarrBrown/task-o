@@ -16,5 +16,7 @@ Add collaborators to a task for shared work.
 ## Team Members
 
 George
+
 James
-Katen
+
+Katene
