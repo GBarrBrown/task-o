@@ -48,6 +48,4 @@ router.get('/:id/add', (req, res) => {
     res.render('add-task')
 })
 
-router.post('/whateverthepathis', ())
-
 module.exports = router
