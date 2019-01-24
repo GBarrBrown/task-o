@@ -41,8 +41,8 @@ function getUser(login, db = connection){
         .where('email', login)
 }
 
-// getTask(res.body.task).then((task) => {
-//     getCollabs(res.body.task).then((collabs) => {
+// getTask(res.params.task).then((task) => {
+//     getCollabs(res.params.task).then((collabs) => {
 //         task[0].collaborators = collabs
 //         //render here
 //     })
