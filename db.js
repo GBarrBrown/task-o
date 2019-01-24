@@ -42,7 +42,6 @@ function getUser(login, db = connection){
         .where('email', login)
 }
 
-<<<<<<< HEAD
 function addTask(UID, task, db = connection){
     const date = new Date().toString().slice(0,15)
     var cleanData = {
@@ -59,5 +58,3 @@ function addTask(UID, task, db = connection){
                 .insert({'user_id': UID, 'task_id': taskID[0]})
         })
 }
-=======
->>>>>>> 874ac937fdddd981831a20b0344654228b1cbccf
