@@ -35,4 +35,15 @@ router.get('/:id/home', (req, res)=> {
       })
 })
 
+router.get('/:id/task/:task', (req,res) => {
+    return db.getTask(req.params.task).then((task) => {
+        return db.getCollabs(req.params.task).then((collabs) => {
+            task[0].collaborators = collabs
+            res.render('task', task[0])
+        })
+    })
+})
+
+
+
 module.exports = router
