@@ -1,6 +1,8 @@
 body {
     background-color: pink;
     /* font-family: 'Comic Sans MS'; */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .column{
