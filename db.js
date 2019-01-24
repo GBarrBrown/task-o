@@ -7,7 +7,8 @@ module.exports = {
     getAllUsers,
     getTask,
     getUser,
-    getCollabs
+    getCollabs,
+    addTask
 }
 
 
@@ -41,9 +42,19 @@ function getUser(login, db = connection){
         .where('email', login)
 }
 
-// getTask(res.params.task).then((task) => {
-//     getCollabs(res.params.task).then((collabs) => {
-//         task[0].collaborators = collabs
-//         //render here
-//     })
-// })
+function addTask(UID, task, db = connection){
+    const date = new Date().toString().slice(0,15)
+    var cleanData = {
+        name: task.name,
+        description: task.description,
+        creation_date: date,
+        status: task.status
+    }
+    return db('tasks')
+        .insert(cleanData)
+        .then((taskID) => {
+            console.log(taskID)
+            return db('task_user')
+                .insert({'user_id': UID, 'task_id': taskID[0]})
+        })
+}
