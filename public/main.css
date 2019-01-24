@@ -1,8 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Aleo');
+
 body {
     background-color: pink;
     /* font-family: 'Comic Sans MS'; */
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
   Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.task-o-logo-border {
+    display: inline-block;
+}
+
+.task-o-logo link:hover, .task-o-logo-link:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.task-o-logo {
+    padding: 3px;
+    font-family: 'Aleo', serif;
+    font-weight: bolder;
+    border-style: solid;
+    color: black;
 }
 
 .column{
