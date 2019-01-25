@@ -8,7 +8,8 @@ module.exports = {
     getTask,
     getUser,
     getCollabs,
-    addTask
+    addTask,
+    editTask
 }
 
 
@@ -56,4 +57,10 @@ function addTask(UID, task, db = connection){
             return db('task_user')
                 .insert({'user_id': UID, 'task_id': taskID[0]})
         })
+}
+
+function editTask(taskID, taskItem, db = connection){
+    return db('tasks')
+        .where('id', taskID)
+        .update(taskItem)
 }
