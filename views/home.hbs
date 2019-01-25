@@ -7,53 +7,43 @@
 <div class="row">
     <div class="column">
         <h2 class="column-title">TODO</h2>
-
-{{!-- Mock hardcoded content --}}
-            <a href="/" class="tasks-link">
-                <div class="tasks-container">
-                    <div class="tasks-summary">
-                        <h3 class='tasks-title'>Title</h3>
-                        <h4 class='tasks-date'>23/1/2018</h4>
-                    </div>
-                </div>
-            </a>
-
-            <div class="tasks-container">
-                <div class="tasks-summary">
-                    <h3 class='tasks-title'>Title</h3>
-                    <h4 class='tasks-date'>23/1/2018</h4>
-                </div>
-            </div>
-{{!-- Till here --}}
-
-        {{!-- {{#each tasks}}
-            {{#if status = 0}}
+        {{#each coloumn0}}
                 <a href="/" class="tasks-link">
                     <div class="tasks-container">
                         <div class="tasks-summary">
-                            <h3 class='tasks-title'>{{title}}</h3>
-                            <h4 class='tasks-date'>{{date}}</h4>
+                            <h3 class='tasks-title'>{{name}}</h3>
+                            <h4 class='tasks-date'>{{creation_date}}</h4>
                         </div>
                     </div>
                 </a>
-            {{/if}}
-        {{/each}} --}}
-
+        {{/each}}
     </div>
+
     <div class="column">
         <h2 class="coloumn-title">DOING</h2>
-
-{{!-- Mock hardcoded content --}}
-            <div class="tasks-container">
-                <div class="tasks-summary">
-                    <h3 class='tasks-title'>Title</h3>
-                    <h4 class='tasks-date'>23/1/2018</h4>
-                </div>
-            </div>
-{{!-- Till here --}}
-
+        {{#each coloumn1}}
+                <a href="/" class="tasks-link">
+                    <div class="tasks-container">
+                        <div class="tasks-summary">
+                            <h3 class='tasks-title'>{{name}}</h3>
+                            <h4 class='tasks-date'>{{creation_date}}</h4>
+                        </div>
+                    </div>
+                </a>
+        {{/each}}
     </div>
+
     <div class="column">
         <h2 class="coloumn-title">DONE</h2>
+        {{#each coloumn2}}
+                <a href="/" class="tasks-link">
+                    <div class="tasks-container">
+                        <div class="tasks-summary">
+                            <h3 class='tasks-title'>{{name}}</h3>
+                            <h4 class='tasks-date'>{{creation_date}}</h4>
+                        </div>
+                    </div>
+                </a>
+        {{/each}}
     </div>
 </div>
