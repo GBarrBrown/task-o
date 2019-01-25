@@ -8,7 +8,7 @@
     <div class="column">
         <h2 class="column-title">TODO</h2>
         {{#each column0}}
-                <a href="/" class="tasks-link">
+                <a href="/1/task/{{id}}" class="tasks-link">
                     <div class="tasks-container">
                         <div class="tasks-summary">
                             <h3 class='tasks-title'>{{name}}</h3>
@@ -22,7 +22,7 @@
     <div class="column">
         <h2 class="coloumn-title">DOING</h2>
         {{#each column1}}
-                <a href="/" class="tasks-link">
+                <a href="/1/task/{{id}}" class="tasks-link">
                     <div class="tasks-container">
                         <div class="tasks-summary">
                             <h3 class='tasks-title'>{{name}}</h3>
@@ -36,7 +36,7 @@
     <div class="column">
         <h2 class="coloumn-title">DONE</h2>
         {{#each column2}}
-                <a href="/" class="tasks-link">
+                <a href="/1/task/{{id}}" class="tasks-link">
                     <div class="tasks-container">
                         <div class="tasks-summary">
                             <h3 class='tasks-title'>{{name}}</h3>
