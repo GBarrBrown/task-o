@@ -68,6 +68,14 @@ router.get('/:id/task/:task', (req,res) => {
     })
 })
 
+router.post('/:id/edit', (req,res) => {
+    var id = req.params.id
+    return db.editTask(id,req.body)
+    .then(() => {
+        res.redirect('/'+id+'/home')
+    })
+})
+
 router.get('/:id/add', (req, res) => {
     var id = req.params.id
     res.render('add-task',{id})
