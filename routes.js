@@ -25,9 +25,33 @@ router.post('/login', (req,res) => {
 })
 
 router.get('/:id/home', (req, res)=> {
+
     return db.getAllTasks(req.params.id)
     .then((tasks) =>{
-        res.render('home',tasks)
+        var column0 = []
+        var column1 = []
+        var column2 = []
+        for(let task of tasks){
+            switch(task.status){
+                case 0:
+                    column0.push(task)
+                    break;
+
+                case 1:
+                    column1.push(task)
+                    break;
+
+                case 2:
+                    column2.push(task)
+                    break;
+            }
+        }
+        var arrangedTasks = {
+            column0,
+            column1,
+            column2
+        }
+        res.render('home',arrangedTasks)
     })
     .catch(err => {
         console.log(err.message)
@@ -41,6 +65,21 @@ router.get('/:id/task/:task', (req,res) => {
             task[0].collaborators = collabs
             res.render('task', task[0])
         })
+    })
+})
+
+router.get('/:id/add', (req, res) => {
+    var id = req.params.id
+    res.render('add-task',{id})
+})
+
+router.post('/:id/add', (req, res) => {
+    var UID = req.params.id
+    var task = req.body
+
+    return db.addTask(UID,task)
+    .then((itemID) => {
+        res.redirect('/'+UID+'/home')
     })
 })
 

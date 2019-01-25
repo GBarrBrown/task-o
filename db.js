@@ -53,7 +53,6 @@ function addTask(UID, task, db = connection){
     return db('tasks')
         .insert(cleanData)
         .then((taskID) => {
-            console.log(taskID)
             return db('task_user')
                 .insert({'user_id': UID, 'task_id': taskID[0]})
         })
