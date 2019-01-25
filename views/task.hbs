@@ -1,0 +1,26 @@
+<form action='/{{id}}/edit' method='post'>
+    <label for='title'>
+        <input type='text' name='title' value='{{name}}' required>
+    </label>
+    <br>
+    <label for='description'>
+        <input type='text' name='description' value='{{description}}' >
+    </label>
+    <br>
+    <label for='status'>
+        <input type='radio' name='status' value='0' > TODO<br>
+        <input type='radio' name='status' value='1'> DOING<br>
+        <input type='radio' name='status' value='2'> DONE<br>
+    </label>
+    <br>
+    <label>
+        <input type='submit' value='Save'>
+    </label>
+</form>
+
+<br>
+Date Made: {{creation_date}} <br><br>
+Collaborators: <br>
+{{#each collaborators}}
+    {{name}} - {{email}} <br>
+{{/each}}
